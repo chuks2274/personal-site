@@ -1,0 +1,367 @@
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.4) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #f8f9fa; /* Light text for dark contrast */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  /* Background Image Setup */
+  background-image: url('../assets/background.png'); /* correct path */
+  background-size: cover;         
+  background-position: center;    
+  background-repeat: no-repeat;   
+  background-attachment: fixed;   
+}
+
+/* Subtle Overlay to Improve Readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* dark translucent overlay */
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #0d6efd;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   SCROLLBAR STYLING
+========================================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.4);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.7);
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar .navbar-brand {
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.navbar-brand .logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navbar-brand:hover .logo {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0d6efd;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+/* Mobile alignment fix */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 8rem 0;
+  color: #fff;
+  z-index: 1;
+}
+
+/* Translucent Backdrop for Hero Section */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 58, 64, 0.7);
+  z-index: -1;
+  backdrop-filter: blur(2px);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero .btn,
+.hero .btn-lg {
+  position: relative;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  color: #fff;
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+  border: none;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero .btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(13, 110, 253, 0.7),
+              0 0 40px rgba(102, 16, 242, 0.5);
+}
+
+.hero .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.hero .btn:hover::before {
+  left: 125%;
+}
+
+.hero .btn:focus,
+.hero .btn:active {
+  outline: none;
+  box-shadow: 0 0 15px rgba(13, 110, 253, 0.8);
+}
+
+/* Responsive hero text */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+#about img {
+  border: 4px solid #0d6efd;
+  transition: transform 0.3s ease;
+}
+
+#about img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   PROJECTS SECTION
+========================================= */
+.card {
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card:hover {
+  transform: scale(1.03) translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.card-body {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.btn-container,
+.card-body .btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.btn-container .btn,
+.card-body .btn-container .btn {
+  display: inline-block;
+  width: auto;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 0.4rem;
+  min-width: max-content;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-container .btn:hover,
+.card-body .btn-container .btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+#contact a {
+  color: #0d6efd;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: #6610f2;
+}
+
+/* =========================================
+   BUTTON STYLES
+========================================= */
+.btn-outline-dark:hover {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+  flex-shrink: 0;
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   CONTAINERS
+========================================= */
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Main content area fills remaining space */
+main {
+  flex: 1 0 auto;
+}
+
+
+ 
+
