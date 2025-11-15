@@ -362,6 +362,14 @@ main {
   flex: 1 0 auto;
 }
 
-
+.highlight-blue {
+  color: #007bff; /* Bootstrap primary blue */
+   /* optional for extra emphasis */
+}
  
+.contact-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
 
