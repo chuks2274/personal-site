@@ -141,13 +141,14 @@ p {
    HERO SECTION
 ========================================= */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   position: relative;
-  padding: 8rem 0;
+  padding: 2rem 0;
+  padding-top: 1rem;
   color: #fff;
   z-index: 1;
 }
@@ -372,5 +373,4 @@ main {
   font-weight: bold;
   margin-bottom: 3px;
 }
-
 
